@@ -1,0 +1,42 @@
+body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #eee;
+}
+h6 {
+    font-weight: 600;
+}
+
+
+.wrapper {
+    margin: 5em 2em 0em 2em;
+}
+
+.placeholder {
+    height: 100px;
+    width: 100px;
+    background-color: #ccc;
+}
+
+
+/* Bootstrap Overrides */
+.navbar-brand {
+    font-family: 'Fugaz One', cursive;
+}
+
+.card {
+    border-radius: 0.5em;
+    height: 500px;
+}
+
+
+.card-title {
+    padding: 1em 0em 0em 1em;
+}
+.card-body {
+    overflow-y: scroll;
+    padding-top: 0 !important;
+}
+
+.card-deck {
+    margin-bottom: 30px;
+}
