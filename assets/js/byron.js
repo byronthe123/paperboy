@@ -16,14 +16,17 @@ function foxNewsSearch(searchTerm) {
 // foxNewsSearch('trump');
 
 function foxNewsSearchHTML(response) {
-    var title = response.articles[0].title;
-    var description = response.articles[0].description;
-    var url = response.articles[0].url;
-    var image = response.articles[0].urlToImage;
-
-    console.log(title);
-
-    let foxNewsCard = '<div class="card fox_news_card"><div class="card-header"><h3>Fox News</h3>' + title + '</div><div class="card-body">' + description + '<br><a href="' + url + '">Full Story</a>' + '</div></div>';
+    let foxNewsCard = '<div class="card fox_news_card"><div class="card-header"><h3>Fox News</h3>No Results Found</div><div class="card-body">Please try searching for another news related term.</div></div>';;
+    if(response.totalResults > 0) {
+        var title = response.articles[0].title;
+        var description = response.articles[0].description;
+        var url = response.articles[0].url;
+        var image = response.articles[0].urlToImage;
+    
+        // console.log(title);
+    
+        foxNewsCard = '<div class="card fox_news_card"><div class="card-header"><h3>Fox News</h3>' + title + '</div><div class="card-body">' + description + '<br><a href="' + url + '">Full Story</a>' + '</div></div>';
+    }
     $('.fox_news_cards').append(foxNewsCard);
 }
 
