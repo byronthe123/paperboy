@@ -7,6 +7,10 @@ h6 {
     font-weight: 600;
 }
 
+img {
+    object-fit: cover;
+}
+
 
 .wrapper {
     margin: 5em 2em 0em 2em;
