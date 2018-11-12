@@ -46,20 +46,28 @@ h6 {
 .youtube_img_overlay {
     opacity: 0;
     transition: opacity .25s ease-in-out;
-    font-size:300%;
     position: absolute;
-    width: 120px;
-    height: 90px;
+    /* margin: auto auto; */
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .youtube_img_overlay:hover {
-    opacity: 0.5;
+    opacity: 0.8;
     transition: opacity .5s ease-in-out;
 }
 
 .youtube_img_overlay:hover .youtube_img{
     opacity: 0.7;
     /* transition: opacity .5s ease-in-out; */
+}
+
+.div_youtube_thumbnail {
+    position: relative;
+}
+
+tr:hover {
+    cursor: pointer;
 }
 /* -------------------------------  Byron's CSS End -------------------------------  */
 
