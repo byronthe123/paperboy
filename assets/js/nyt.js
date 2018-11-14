@@ -1,9 +1,33 @@
 $(document).ready(function() {
 
-    
+function nytOnLoad() {
+    var queryURL="https://api.nytimes.com/svc/topstories/v2/home.json?api-key=548cf1cc9a384242a531beac63abd9f4"
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    }).then(function(response) {
+        console.log(response);
+        for(let i = 0; i < 10; i++) {
 
-//Initialize variables
-var searchTerm;
+            var title = response.results[i].title;
+            console.log(title)
+            var description = response.results[i].abstract;
+            var url = response.results[i].url;
+            try {
+                var image = response.results[i].multimedia[0].url;
+            }
+            catch(e) {
+                console.log("no thumbnail")
+            }
+
+
+            var nytCard = $('<tr id=' + url + '><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src=' + image +' class="placeholder"></td></tr>');
+            $('.nyt-cards').append(nytCard);
+        }
+    })
+}
+
+nytOnLoad();
 
 function nytSearch(searchTerm) {
     queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=548cf1cc9a384242a531beac63abd9f4&sort=newest&q=" + searchTerm;
