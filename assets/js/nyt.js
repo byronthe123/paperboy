@@ -18,7 +18,7 @@ function nytSearch(searchTerm) {
 
 
 function nytSearchHTML(response) {
-    $('.nyt_cards').empty();
+    $('.nyt-cards').empty();
     if(response.response.docs.length > 0) {
         for(let i = 0; i < response.response.docs.length; i++) {
 
