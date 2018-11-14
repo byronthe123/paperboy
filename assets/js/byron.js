@@ -1,16 +1,21 @@
 // Byron's JS
+// Test comment
 $(document).ready(function(){
 
     //---------------------------------------FOX NEWS API:-----------------------------------//
     console.log('byron.js online');
 
     function foxNewsSearch(searchTerm) {
-        var queryURL = 'https://newsapi.org/v2/everything?q=' + searchTerm + '&sources=fox-news&apiKey=4158f11fae04433cb9d70983ca8857bd';
+        var queryURL = 'https://newsapi.org/v2/top-headlines?sources=fox-news&apiKey=4158f11fae04433cb9d70983ca8857bd';
+        if(searchTerm.length > 0) {
+          queryURL = 'https://newsapi.org/v2/everything?q=' + searchTerm + '&sources=fox-news&apiKey=4158f11fae04433cb9d70983ca8857bd';
+        } 
+
         $.ajax({
             url: queryURL,
             method: 'GET'
         }).then(function(response){
-            // console.log(response);
+            console.log(response);
             foxNewsSearchHTML(response);
         })
     }
@@ -64,6 +69,10 @@ $(document).ready(function(){
     //---------------------------------------YOUTUBE API:-----------------------------------//
 
     function youtubeSearch(searchTerm) {
+        console.log(searchTerm);
+        if(searchTerm.length < 1) {
+          searchTerm = "today's news";
+        }
         $('.youtube_cards').empty();
         let queryURL = "https://www.googleapis.com/youtube/v3/search";
         queryURL += '?' + $.param({
@@ -76,7 +85,6 @@ $(document).ready(function(){
             url: queryURL,
             method: 'GET'
         }).done(function(response){
-            // console.log(response);
 
             let videos = [];
 
@@ -91,9 +99,6 @@ $(document).ready(function(){
                     videos.push(response.items[i]);
                 }
             }
-
-            console.log(videos);
-            console.log(videos.length);
 
             for(let i = 0; i < videos.length; i++) {
                 youtubeSearchHTML(videos[i]);
@@ -123,6 +128,9 @@ $(document).ready(function(){
         foxNewsSearch(searchTerm);
         youtubeSearch(searchTerm);
     });
+
+    foxNewsSearch('');
+    youtubeSearch('');
 
 
     // $('#submit-btn').on('click', function(e){
