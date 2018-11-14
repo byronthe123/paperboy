@@ -17,7 +17,8 @@ function nytOnLoad() {
                 var image = response.results[i].multimedia[0].url;
             }
             catch(e) {
-                console.log("no thumbnail")
+                console.log("hahha no thumbnail")
+                var image = "assets/images/NYT_logo.jpg"
             }
 
 
@@ -50,14 +51,14 @@ function nytSearchHTML(response) {
             var description = response.response.docs[i].snippet;
             var url = response.response.docs[i].web_url;
             try {
-                var image = response.response.docs[i].multimedia[2].url;
+                var image = "https://static01.nyt.com/" + response.response.docs[i].multimedia[2].url;
             }
             catch(e) {
-                console.log("no thumbnail")
+                var image = "assets/images/NYT_logo.jpg"
             }
 
 
-            var nytCard = $('<tr id=' + url + '><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src=https://static01.nyt.com/' + image +' class="placeholder"></td></tr>');
+            var nytCard = $('<tr id=' + url + '><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src=' + image +' class="placeholder"></td></tr>');
             $('.nyt-cards').append(nytCard);
         }
     } else {
