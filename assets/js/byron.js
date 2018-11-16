@@ -57,8 +57,10 @@ $(document).ready(function(){
                 var url = response.articles[i].url;
                 var image = response.articles[i].urlToImage;
 
-                var foxNewsCard = $('<tr id=' + url + '><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src=' + image +' class="placeholder"></td></tr>');
+                var foxNewsCard = $('<tr id="' + url + '"><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src="' + image +'" class="placeholder"></td></tr>');
                 $('.fox_news_cards').append(foxNewsCard);
+
+                console.log(url);
             }
         } else {
             var foxNewsCard = $('<tr><td><h6>No Results Found</h6><p>Please try searching for another news related term.</p></td><td class="d-flex justify-content-end"></td></tr>');
@@ -117,7 +119,7 @@ $(document).ready(function(){
 
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<img src="assets/images/play.png" class="youtube_img_overlay img-fluid"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid">' + '<p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<div class="div_youtube_thumbnail d-flex justify-content-center align-items-center"><img src="assets/images/play.png" class="youtube_img_overlay img-fluid mx-auto"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid"></div><p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
-        var youtubeCard = $('<div class="embed-responsive embed-responsive-16by9 mb-4"><iframe class="embed-responsive-item" src="' + videoLink + '"></iframe></div>');
+        var youtubeCard = $('<tr id=' + videoLink + '><h6>' + title + '</h6><td><iframe class="img-fluid" src="' + videoLink + '"></iframe></td></tr>');
         // console.log(youtubeCard);
         $('.youtube_cards').append(youtubeCard);
     }
@@ -143,7 +145,7 @@ $(document).ready(function(){
     // });
 
     $(document).on('click', 'tr', function(){
-        console.log($(this).attr('id'));
+        alert($(this).attr('id'));
         window.open($(this).attr('id'));
     });
 })
