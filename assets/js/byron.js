@@ -120,6 +120,7 @@ $(document).ready(function(){
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<img src="assets/images/play.png" class="youtube_img_overlay img-fluid"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid">' + '<p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<div class="div_youtube_thumbnail d-flex justify-content-center align-items-center"><img src="assets/images/play.png" class="youtube_img_overlay img-fluid mx-auto"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid"></div><p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
         var youtubeCard = $('<div class="embed-responsive embed-responsive-16by9 mb-4"><iframe class="embed-responsive-item" src="' + videoLink + '"></iframe></div>');      
+        $('.youtube_cards').append(youtubeCard);
     }
 
     // youtubeSearch("assassin's creed");
