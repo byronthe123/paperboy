@@ -3,7 +3,7 @@
 $(document).ready(function(){
 
     //---------------------------------------FOX NEWS API:-----------------------------------//
-    console.log('byron.js online');
+    // console.log('byron.js online');
 
     function foxNewsSearch(searchTerm) {
         var queryURL = 'https://newsapi.org/v2/top-headlines?sources=fox-news&apiKey=4158f11fae04433cb9d70983ca8857bd';
@@ -15,7 +15,7 @@ $(document).ready(function(){
             url: queryURL,
             method: 'GET'
         }).then(function(response){
-            console.log(response);
+            // console.log(response);
             foxNewsSearchHTML(response);
         })
     }
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 var foxNewsCard = $('<tr id="' + url + '"><td><h6>' + title + '</h6><p>' + description + '</p></td><td class="d-flex justify-content-end"><img src="' + image +'" class="placeholder"></td></tr>');
                 $('.fox_news_cards').append(foxNewsCard);
 
-                console.log(url);
+                // console.log(url);
             }
         } else {
             var foxNewsCard = $('<tr><td><h6>No Results Found</h6><p>Please try searching for another news related term.</p></td><td class="d-flex justify-content-end"></td></tr>');
@@ -71,7 +71,7 @@ $(document).ready(function(){
     //---------------------------------------YOUTUBE API:-----------------------------------//
 
     function youtubeSearch(searchTerm) {
-        console.log(searchTerm);
+        // console.log(searchTerm);
         if(searchTerm.length < 1) {
           searchTerm = "today's news";
         }
@@ -96,7 +96,7 @@ $(document).ready(function(){
             }
 
             for(let i = 0; i < index; i++) {
-                console.log(response.items[i].id.kind);
+
                 if(response.items[i].id.kind === "youtube#video") {
                     videos.push(response.items[i]);
                 }
@@ -119,9 +119,7 @@ $(document).ready(function(){
 
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<img src="assets/images/play.png" class="youtube_img_overlay img-fluid"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid">' + '<p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
         // var youtubeCard = $('<tr id=' + videoLink + '><td><h6>' + title + '</h6>' + '<div class="div_youtube_thumbnail d-flex justify-content-center align-items-center"><img src="assets/images/play.png" class="youtube_img_overlay img-fluid mx-auto"></a>' + '<img src="' + thumbnailURL + '"class="youtube_img img-fluid"></div><p>' + description + '</p></td><td class="d-flex justify-content-end"></td></tr>');
-        var youtubeCard = $('<tr id=' + videoLink + '><h6>' + title + '</h6><td><iframe class="img-fluid" src="' + videoLink + '"></iframe></td></tr>');
-        // console.log(youtubeCard);
-        $('.youtube_cards').append(youtubeCard);
+        var youtubeCard = $('<div class="embed-responsive embed-responsive-16by9 mb-4"><iframe class="embed-responsive-item" src="' + videoLink + '"></iframe></div>');      
     }
 
     // youtubeSearch("assassin's creed");
@@ -145,7 +143,7 @@ $(document).ready(function(){
     // });
 
     $(document).on('click', 'tr', function(){
-        alert($(this).attr('id'));
+        // alert($(this).attr('id'));
         window.open($(this).attr('id'));
     });
 })
