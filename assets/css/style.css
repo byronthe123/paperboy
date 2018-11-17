@@ -10,6 +10,22 @@ h6 {
     font-weight: 600;
 }
 
+.nav-logo {
+    width: 100px;
+    height: 55px;
+    position: fixed;
+    left: 125px;
+    background-color:#222831 !important; 
+    background-image:url('../images/Paperboy.svg'); 
+    background-repeat:no-repeat; 
+    background-size: 100px; 
+    background-position: center-left;
+}
+
+.fa-search {
+    color: #fff;
+}
+
 img {
     object-fit: cover;
 }
