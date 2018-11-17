@@ -73,7 +73,7 @@ $(document).ready(function(){
     function youtubeSearch(searchTerm) {
         // console.log(searchTerm);
         if(searchTerm.length < 1) {
-          searchTerm = "today's news";
+          searchTerm = "news, today";
         }
         $('.youtube_cards').empty();
         let queryURL = "https://www.googleapis.com/youtube/v3/search";
@@ -81,6 +81,7 @@ $(document).ready(function(){
             part: 'snippet',
             key: 'AIzaSyBqjeZvRL_Xlr2_Fclhpr57eu3svLsSfHs',
             q: searchTerm
+
         });
 
         $.ajax({
