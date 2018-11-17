@@ -3,6 +3,7 @@ body {
     font-family: 'Assistant', sans-serif;
 
     color: #0b032d;  /*// Shohan: for color styling */
+    background-color: #ecf1f1;
 
 }
 h6 {
@@ -38,14 +39,14 @@ h5{
 .card {
     border-radius: 0.5em;
     height: 500px;
-
+      /* box-shadow: 0px 0px 5px 0px #888888; */
 }
 
 
 .card-title {
     padding: 0.7em 0em 0em 1em;
 
-    
+
 }
 .card-body {
     overflow-y: scroll;
