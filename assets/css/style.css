@@ -2,6 +2,8 @@
 body {
     font-family: 'Assistant', sans-serif;
     background-color: #eee;
+    color: #0b032d;  /*// Shohan: for color styling */
+    background-color: #00adb5; /*// Shohan: for color styling */
 }
 h6 {
     font-weight: 600;
@@ -21,7 +23,11 @@ img {
     background-color: #ccc;
 }
 
-
+h5{
+      background-color: #222831; /*// Shohan: for color styling */
+      color:white;
+      border:none;
+}
 /* Bootstrap Overrides */
 .navbar-brand {
     font-family: 'Fugaz One', cursive;
@@ -30,11 +36,14 @@ img {
 .card {
     border-radius: 0.5em;
     height: 500px;
+    border:none; /*// Shohan: for color styling */
 }
 
 
 .card-title {
     padding: 1em 0em 0em 1em;
+    border:none; /*// Shohan: for color styling */
+     padding-bottom: 5px;  /*// Shohan: for color styling */
 }
 .card-body {
     overflow-y: scroll;
@@ -73,4 +82,3 @@ tr:hover {
     cursor: pointer;
 }
 /* -------------------------------  Byron's CSS End -------------------------------  */
-
