@@ -1,4 +1,6 @@
-
+$(".navbar-brand").on("click", function() {
+    location.reload()
+})
 
 $("#search-query").on("click", function() {
     console.log(phrases.length)
