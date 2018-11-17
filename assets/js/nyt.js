@@ -88,8 +88,8 @@ function nytSearchHTML(response) {
 //     )
 // })
 
-document.getElementById('search-form').addEventListener('submit', function(e){
-    e.preventDefault();
+$( "#search-form" ).submit(function( event ) {
+    event.preventDefault();
     var searchTerm = $('#search-query').val().trim();
     nytSearch(searchTerm)
 });

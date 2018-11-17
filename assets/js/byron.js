@@ -125,9 +125,8 @@ $(document).ready(function(){
     }
 
     // youtubeSearch("assassin's creed");
-
-    document.getElementById('search-form').addEventListener('submit', function(e){
-        e.preventDefault();
+    $( "#search-form" ).submit(function( event ) {
+        event.preventDefault();
         var searchTerm = $('#search-query').val().trim();
         foxNewsSearch(searchTerm);
         youtubeSearch(searchTerm);
