@@ -9,13 +9,53 @@
 
 
 window.onload = function() {
+
+  //Function to load events on this day on load
+  function wikiOnLoad() {
+    var mm = moment().format("MM")
+    var dd = moment().format("DD")
+    var queryURL="https://en.wikipedia.org/api/rest_v1/feed/onthisday/all/" + mm + "/" + dd
+    $(".wiki-title").html("Wikipedia (On This Day)")
+    $.getJSON(queryURL, function(data) {       // wikipedia api to get a summary based on button already created or new buttons added
+                 info = data.selected;
+                //  console.log(info);
+                 var numArticles=10
+                 var wikiTable = $("<table>")
+                 var wikiTbody= $("<tbody>")
+                 wikiTbody.attr("id", "wiki-cards")
+                 $(".wiki-section").empty();
+                 if (info.length < 10) {
+                   numArticles=info.length
+                 }
+                 for (i=0;i<numArticles;i++) {
+                   var year = info[i].year;
+                   var title = info[i].text;
+                   var url = info[i].pages[0].content_urls.desktop.page
+                   var wikiCard = $('<tr id=' + url + '><td><h6>' + year + '</h6><p>' + title + '</p></td></tr>');
+                  $(wikiTbody).append(wikiCard);
+                 }
+                 $(wikiTable).append(wikiTbody)
+                 $(".wiki-section").append(wikiTable)
+                //  $("#wikiInfo").html(info); //where the summary is shown on the page
+  });
+};
+
+wikiOnLoad()
+
     $( "#search-form" ).submit(function( event ) {
         event.preventDefault();
         console.log("You searched for " + $("#search-query").val().trim())
+        $(".wiki-title").html("Wikipedia")
         $.getJSON('https://en.wikipedia.org/api/rest_v1/page/summary/' + $("#search-query").val().trim(), function(data) {       // wikipedia api to get a summary based on button already created or new buttons added
                  info = data.extract;
-                 console.log(info);
-                 $("#wikiInfo").html(info); //where the summary is shown on the page
+                 console.log("info: " + info);
+                 var wikiInfo = $("<p>")
+                 wikiInfo.addClass("card-text")
+                 wikiInfo.attr("id", "wikiInfo")
+                 $(wikiInfo).html(info); //where the summary is shown on the page
+                 $(".wiki-section").empty();
+                 $(".wiki-section").append(wikiInfo)
+
         });
 
 

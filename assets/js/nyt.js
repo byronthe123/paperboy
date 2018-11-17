@@ -6,11 +6,10 @@ function nytOnLoad() {
         url: queryURL,
         method: 'GET'
     }).then(function(response) {
-        console.log(response);
+        // console.log(response);
         for(let i = 0; i < 10; i++) {
 
             var title = response.results[i].title;
-            console.log(title)
             var description = response.results[i].abstract;
             var url = response.results[i].url;
             try {
