@@ -65,7 +65,7 @@ window.onload = function() {
         // =====================Reddit API==========================================
         });
 
-        var queryURL = "https://api.reddit.com/r/worldnews"; // set limit to 10
+        var queryURL = "https://api.reddit.com/r/UpliftingNews"; // set limit to 10
 
         $.ajax({
           url: queryURL,
