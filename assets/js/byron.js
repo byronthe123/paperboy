@@ -44,7 +44,7 @@ $(document).ready(function(){
     function youtubeSearch(searchTerm) {
         $('.youtube_cards').empty();
         // console.log(searchTerm);
-        var youtubeSearchArray = ['fox news top news', 'the new york times top news', 'bbc top news', 'c span', 'cbs top news'];
+        var youtubeSearchArray = ['fox news top news', 'nyt top news', 'bbc top news', 'c span', 'cbs top news'];
 
         if(searchTerm.length < 1) {
             sort = true;
