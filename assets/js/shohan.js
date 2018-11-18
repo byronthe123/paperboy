@@ -18,7 +18,8 @@ window.onload = function() {
     $(".wiki-title").html("Wikipedia (On This Day)")
     $.getJSON(queryURL, function(data) {       // wikipedia api to get a summary based on button already created or new buttons added
                  info = data.selected;
-                //  console.log(info);
+                 console.log(data)
+                 console.log(info);
                  var numArticles=10
                  var wikiTable = $("<table>")
                  var wikiTbody= $("<tbody>")
