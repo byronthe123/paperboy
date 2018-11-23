@@ -3,7 +3,7 @@ body {
     font-family: 'Assistant', sans-serif;
 
     color: #0b032d;  /*// Shohan: for color styling */
-    background-color: #ecf1f1;
+    background-color: #eee;
 
 }
 h6 {
@@ -11,15 +11,14 @@ h6 {
 }
 
 .nav-logo {
-    width: 100px;
-    height: 55px;
-    position: fixed;
-    left: 125px;
+    height: 50px;
+    width: 90px;
     background-color:#222831 !important; 
     background-image:url('../images/Paperboy.svg'); 
     background-repeat:no-repeat; 
     background-size: 100px; 
     background-position: center-left;
+    float: right;
 }
 
 .fa-search {
@@ -47,9 +46,19 @@ h5{
 
 
 }
+
+.text-logo {
+    line-height: 2
+}
 /* Bootstrap Overrides */
 .navbar-brand {
     font-family: 'Fugaz One', cursive;
+    padding: 0px !important;
+}
+
+.navbar {
+    padding: 0px 0px 0px 1em !important;
+    min-height: 55px !important;
 }
 
 .card {
