@@ -1,8 +1,6 @@
-# project1
-# Official Name: Paperboy
-# An alternative search engine for news - the goal was to capture results from both conservative and liberal sources with a touch of # modern sources such as YouTube and Reddit.
+# Paperboy
+## An alternative search engine for news - the goal was to capture results from both conservative and liberal sources with a touch of # modern sources such as YouTube and Reddit.
 
-Project 1
 Problem to solve: There’s too much clutter/overload when searching for information/news on Google and other search engines.
 There are also various sources for news that people might individually use to find information that aren’t found in one place
 Hypothesis: To develop a feature that gets relevant information that the user searches for from six different sources and to display the results in a neat, user-friendly way.
@@ -45,9 +43,9 @@ Twitter
 Wolfram Alpha
 Roles
 Alan - Wireframing, D3.js Charting Library, Bootstrap/Frontend
-Byron - Fox API, Youtube API (I’d like to try it), Overall JavaScript
+Byron - Fox API, Youtube API, Overall JavaScript
 Shohan - Instagram,Twitter,Alternative CSS frameworks(potentially), Logo
 Sepanta - NYT
 
 
-https://byronthe123.github.io/project1/
+https://byronthe123.github.io/paperboy/
